@@ -6,21 +6,25 @@
   <title>VideoToolkit</title>
   <meta name="description" content="VideoToolkit: tải video Facebook Page, làm mờ logo và lên lịch đăng TikTok, YouTube, Facebook trên Windows.">
   <link rel="icon" href="logo.png">
-  <link rel="stylesheet" href="style.css?v=9">
+  <script>try{var t=localStorage.getItem("vt-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
   <header class="topbar">
     <div class="wrap topbar-inner">
       <a class="brand" href="#top"><img src="logo.png" alt="" width="36" height="36"><span>VideoToolkit</span></a>
-      <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false">☰</button>
       <nav class="nav">
         <a href="#tinh-nang">Tính năng</a>
         <a href="#bang-gia">Bảng giá</a>
+        <a href="#cam-ket">Cam kết</a>
         <a href="#huong-dan">Hướng dẫn</a>
-        <a href="#phien-ban">Phiên bản</a>
         <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Liên hệ</a>
         <a class="btn btn-small" href="#tai-ve">Tải về</a>
       </nav>
+      <div class="topbar-tools">
+        <button class="theme-toggle" type="button" aria-label="Đổi giao diện sáng / tối" title="Đổi giao diện sáng / tối">☾</button>
+        <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false">☰</button>
+      </div>
     </div>
   </header>
 
@@ -79,6 +83,14 @@
             <p>Lượt xem, cảm xúc, bình luận, chia sẻ từng video; danh sách đã đăng và đã lên lịch.</p>
           </article>
         </div>
+        <div class="platforms">
+          <span class="platforms-label">Nền tảng hỗ trợ:</span>
+          <span class="chip"><b>TikTok</b> lên lịch đăng</span>
+          <span class="chip"><b>YouTube Shorts</b> lên lịch đăng</span>
+          <span class="chip"><b>Trang Facebook</b> lên lịch Reels / video, thống kê</span>
+          <span class="chip"><b>Facebook Page</b> tải video, Reels</span>
+          <span class="chip"><b>Windows 10 / 11</b> 64-bit</span>
+        </div>
         <div class="facts">
           <div><b>Giao diện Windows 11</b><span>Sáng / tối theo Windows</span></div>
           <div><b>Dữ liệu ở máy bạn</b><span>Token mã hoá bằng Windows DPAPI</span></div>
@@ -88,7 +100,49 @@
       </div>
     </section>
 
-    <section id="bang-gia" class="section alt">
+    <section id="sap-ra-mat" class="section alt">
+      <div class="wrap">
+        <h2>Sắp ra mắt</h2>
+        <p class="muted">App đang tiếp tục được phát triển. Các tính năng dưới đây đang được lên kế hoạch; thứ tự làm trước sau tuỳ theo góp ý của người dùng.
+          Người đang dùng gói còn hạn được cập nhật miễn phí.</p>
+        <div class="features">
+          <article class="feature soon">
+            <span class="soon-badge">Dự kiến</span>
+            <h3>Lên lịch Instagram Reels</h3>
+            <p>Hẹn giờ đăng Reels lên Instagram Business qua API chính thức, dùng chung app Meta với Trang Facebook.</p>
+          </article>
+          <article class="feature soon">
+            <span class="soon-badge">Dự kiến</span>
+            <h3>Tải video từ TikTok và YouTube</h3>
+            <p>Tải hàng loạt video của một kênh TikTok hoặc YouTube, lọc theo ngày đăng, như với Facebook Page.</p>
+          </article>
+          <article class="feature soon">
+            <span class="soon-badge">Dự kiến</span>
+            <h3>Chèn logo của bạn</h3>
+            <p>Thêm logo / chữ ký của bạn vào cả thư mục video, chọn vị trí, cỡ và độ trong.</p>
+          </article>
+          <article class="feature soon">
+            <span class="soon-badge">Dự kiến</span>
+            <h3>Cắt khung và cắt đoạn</h3>
+            <p>Đổi video ngang sang khung dọc 9:16, cắt bỏ đoạn đầu / cuối cho cả thư mục.</p>
+          </article>
+          <article class="feature soon">
+            <span class="soon-badge">Dự kiến</span>
+            <h3>Thống kê kênh YouTube</h3>
+            <p>Lượt xem, thời gian xem, lượt thích, bình luận từng video Shorts, như trang Thống kê Facebook.</p>
+          </article>
+          <article class="feature soon">
+            <span class="soon-badge">Dự kiến</span>
+            <h3>Nhiều Trang / kênh cùng lúc</h3>
+            <p>Lên lịch cùng một thư mục cho nhiều Trang Facebook hoặc kênh YouTube trong một lần chạy.</p>
+          </article>
+        </div>
+        <p class="feedback">Bạn cần tính năng hay muốn sửa giao diện chỗ nào? <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Nhắn Trang Facebook VideoToolkit</a>,
+          mọi góp ý đều được ghi lại để phát triển sớm.</p>
+      </div>
+    </section>
+
+    <section id="bang-gia" class="section">
       <div class="wrap">
         <h2>Bảng giá</h2>
         <p class="muted">Đủ mọi tính năng ở cả hai gói, chỉ khác thời hạn. Mỗi mã kích hoạt dùng cho một máy tính.</p>
@@ -117,6 +171,37 @@
             <a class="btn" href="#cach-mua">Mua gói 1 năm</a>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="cam-ket" class="section alt">
+      <div class="wrap">
+        <h2>Cam kết</h2>
+        <p class="muted">Mua xong vẫn được hỗ trợ đến khi dùng được, và có chính sách hoàn tiền rõ ràng.</p>
+        <div class="features promises">
+          <article class="feature">
+            <div class="feature-icon">✓</div>
+            <h3>Hỗ trợ cài đặt và sử dụng</h3>
+            <p>Miễn phí trong suốt thời hạn sử dụng: cài đặt, tạo app Meta / Google, kích hoạt, cách dùng. Hỗ trợ qua Trang Facebook, điều khiển máy từ xa khi cần.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">⚙</div>
+            <h3>Bảo hành lỗi</h3>
+            <p>Lỗi của app được sửa miễn phí và cập nhật bản mới. Nếu lỗi khiến bạn không dùng được và không khắc phục được: <b>hoàn 100% tiền</b>.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">↺</div>
+            <h3>Đổi ý trong 15 ngày</h3>
+            <p>Không muốn dùng nữa trong <b>15 ngày đầu</b> kể từ ngày kích hoạt: <b>hoàn 50%</b> số tiền đã trả.</p>
+          </article>
+          <article class="feature">
+            <div class="feature-icon">✎</div>
+            <h3>Góp ý được lắng nghe</h3>
+            <p>Cần thêm tính năng hay sửa giao diện: nhắn Trang Facebook. App đang trong giai đoạn mở rộng, góp ý của bạn được ưu tiên phát triển.</p>
+          </article>
+        </div>
+        <p class="note">Thay đổi từ phía TikTok, Facebook hay YouTube (đổi giao diện, giới hạn đăng bài, khoá tài khoản) không phải lỗi của app;
+          app sẽ được cập nhật để chạy lại sớm nhất có thể. Liên hệ hoàn tiền: <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Trang Facebook VideoToolkit</a>.</p>
       </div>
     </section>
 
@@ -272,7 +357,7 @@
     </div>
   </footer>
 
-  <script src="versions.js?v=9"></script>
-  <script src="app.js?v=9"></script>
+  <script src="versions.js?v=11"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>

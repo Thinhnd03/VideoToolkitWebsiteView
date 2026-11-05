@@ -25,6 +25,27 @@
       <ul>${v.notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>
     </article>`).join("");
 
+  // Light / dark switch: follows the system until the visitor picks one (remembered in this browser)
+  const themeBtn = document.querySelector(".theme-toggle");
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const isDark = () => (document.documentElement.dataset.theme || (darkQuery.matches ? "dark" : "light")) === "dark";
+  const showTheme = () => {
+    if (!themeBtn) return;
+    themeBtn.textContent = isDark() ? "☀" : "☾";
+    themeBtn.title = isDark() ? "Chuyển sang giao diện sáng" : "Chuyển sang giao diện tối";
+    themeBtn.setAttribute("aria-label", themeBtn.title);
+  };
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      const next = isDark() ? "light" : "dark";
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem("vt-theme", next); } catch (e) { /* private mode: just this page */ }
+      showTheme();
+    });
+    darkQuery.addEventListener("change", showTheme);
+    showTheme();
+  }
+
   // Phone menu
   const toggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");

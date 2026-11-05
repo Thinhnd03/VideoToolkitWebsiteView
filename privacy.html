@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chính sách quyền riêng tư · VideoToolkit</title>
+  <meta name="description" content="Chính sách quyền riêng tư của VideoToolkit: dữ liệu chỉ lưu trên máy người dùng.">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="style.css?v=9">
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="./"><img src="logo.png" alt="" width="36" height="36"><span>VideoToolkit</span></a>
+      <button class="menu-toggle" aria-label="Mở menu" aria-expanded="false">☰</button>
+      <nav class="nav">
+        <a href="./#gioi-thieu">Giới thiệu</a>
+        <a href="./#huong-dan">Hướng dẫn</a>
+        <a href="./#phien-ban">Phiên bản</a>
+        <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Liên hệ</a>
+        <a class="btn btn-small" href="./#tai-ve">Tải về</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="wrap legal">
+      <h1>Chính sách quyền riêng tư</h1>
+      <p class="muted">Áp dụng cho ứng dụng VideoToolkit · Cập nhật ngày 04/11/2026</p>
+
+      <p>VideoToolkit là ứng dụng Windows chạy hoàn toàn trên máy của bạn. Người phát triển (Thinhnd) <b>không có máy chủ</b>
+        nhận dữ liệu từ ứng dụng và <b>không thu thập</b> bất kỳ thông tin cá nhân nào của bạn.</p>
+
+      <h2>Dữ liệu ứng dụng sử dụng</h2>
+      <ul>
+        <li><b>Facebook:</b> khi bạn đăng nhập, ứng dụng nhận mã truy cập (access token) cho các Trang bạn quản lý, với các quyền
+          <code>pages_show_list</code>, <code>pages_read_engagement</code>, <code>pages_manage_posts</code>. Mã này chỉ dùng để
+          liệt kê Trang của bạn và đăng hoặc hẹn giờ video do chính bạn chọn lên Trang đó.</li>
+        <li><b>YouTube:</b> mã truy cập Google chỉ dùng để tải lên và hẹn giờ video trên kênh của bạn.</li>
+        <li><b>TikTok:</b> ứng dụng dùng phiên đăng nhập trong cửa sổ trình duyệt riêng của nó để hẹn giờ video trên TikTok Studio.
+          Ứng dụng không đọc và không lưu mật khẩu của bạn.</li>
+        <li><b>Video, caption, lịch đăng:</b> chỉ đọc từ các thư mục bạn chọn và chỉ gửi tới nền tảng bạn chọn đăng.</li>
+      </ul>
+
+      <h2>Nơi lưu dữ liệu</h2>
+      <p>Mọi dữ liệu (mã truy cập, cài đặt, lịch đã đặt) chỉ nằm trên máy bạn, trong thư mục
+        <code>%LOCALAPPDATA%\VideoToolkit</code>. Mã truy cập được mã hoá bằng Windows DPAPI, chỉ tài khoản Windows của bạn
+        giải mã được. Ứng dụng không bán, không chia sẻ và không gửi dữ liệu này cho bên thứ ba nào ngoài chính nền tảng
+        (Facebook, Google/YouTube, TikTok) mà bạn chủ động đăng video lên.</p>
+
+      <h2 id="xoa-du-lieu">Xoá dữ liệu</h2>
+      <p>Bạn có thể xoá dữ liệu bất cứ lúc nào:</p>
+      <ol>
+        <li>Trong ứng dụng: trang <b>Tài khoản</b> → <b>Đăng xuất</b> từng nền tảng.</li>
+        <li>Xoá thư mục <code>%LOCALAPPDATA%\VideoToolkit</code>, hoặc gỡ cài đặt VideoToolkit.</li>
+        <li>Thu hồi quyền ở phía nền tảng: Facebook → Cài đặt → <b>Ứng dụng và trang web</b> → gỡ ứng dụng;
+          Google → <b>Bảo mật</b> → Ứng dụng bên thứ ba → xoá quyền truy cập.</li>
+      </ol>
+      <p>Vì người phát triển không lưu dữ liệu nào của bạn, không có dữ liệu nào cần yêu cầu xoá ở phía người phát triển.</p>
+
+      <h2>Liên hệ</h2>
+      <p>Mọi câu hỏi về chính sách này, vui lòng nhắn tin cho
+        <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Trang Facebook VideoToolkit</a>
+        hoặc qua <a href="https://github.com/Thinhnd03/VideoToolkitWebsiteView/issues">GitHub</a>.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="brand small-brand"><img src="logo.png" alt="" width="28" height="28"><span>VideoToolkit</span></div>
+      <p>Phát triển bởi <b>Thinhnd</b> · <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Trang Facebook</a> · <a href="https://github.com/Thinhnd03/VideoToolkitWebsiteView">GitHub</a> · <a href="privacy">Quyền riêng tư</a></p>
+      <p class="muted small footer-copy">© <span id="year">2026</span> Thinhnd. Chỉ dùng cho tài khoản và nội dung của chính bạn.</p>
+    </div>
+  </footer>
+
+  <script src="app.js?v=9"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="referrer" content="no-referrer">
+  <title>Đăng nhập Facebook · VideoToolkit</title>
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="style.css?v=9">
+  <script>
+    // Facebook sends the user back here (an HTTPS address, which Live apps require) with ?code=...&state=...
+    // Pass it on, unchanged, to VideoToolkit waiting on this PC; nothing is sent anywhere else.
+    // The code is useless without the App Secret, which only the user's PC has.
+    (function () {
+      var q = location.search;
+      if (/[?&](code|error)=/.test(q)) location.replace("http://localhost:8765/" + q);
+    })();
+  </script>
+</head>
+<body>
+  <main class="section">
+    <div class="wrap legal">
+      <h1>Đang chuyển về VideoToolkit…</h1>
+      <p>Trang này chuyển kết quả đăng nhập Facebook về app VideoToolkit đang chạy trên máy bạn.
+        Không có thông tin nào được gửi đi nơi khác.</p>
+      <p class="muted">Nếu trang không tự chuyển: hãy mở VideoToolkit, vào <b>Tài khoản</b> và bấm
+        <b>Đăng nhập Facebook...</b> lại (app phải đang mở trong lúc đăng nhập).</p>
+      <p><a href="./">Về trang VideoToolkit</a></p>
+    </div>
+  </main>
+</body>
+</html>

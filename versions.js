@@ -3,6 +3,19 @@
 // with the tag "v<version>" (see docs/README.md).
 window.VERSIONS = [
   {
+    version: "2.3.0",
+    date: "2026-11-06",
+    size: "131 MB",
+    file: "VideoToolkit-Setup-2.3.0.exe",
+    notes: [
+      "Lên lịch Instagram Reels qua API chính thức của Meta (tài khoản chuyên nghiệp: Doanh nghiệp hoặc Nhà sáng tạo, liên kết với Trang Facebook). App tự đăng đúng giờ khi đang mở.",
+      "Thống kê Instagram: lượt xem, tiếp cận, thích, bình luận, chia sẻ, lưu, thời gian xem Reels; tổng quan tài khoản 28 ngày và khán giả theo độ tuổi, giới tính, nơi ở.",
+      "Thống kê kênh YouTube: lượt xem, giờ xem, thời lượng xem trung bình, người đăng ký mới từng video; nguồn lượt xem, thiết bị, quốc gia, độ tuổi, giới tính (YouTube Analytics).",
+      "Lịch đã đặt có cột Trạng thái; huỷ hoặc đăng lại video Instagram ngay trong app.",
+      "Đăng nhập Facebook thấy cả các Trang nằm trong Meta Business Suite.",
+    ],
+  },
+  {
     version: "2.2.1",
     date: "2026-11-05",
     size: "131 MB",

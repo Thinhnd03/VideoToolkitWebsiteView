@@ -3,6 +3,21 @@
 // with the tag "v<version>" (see docs/README.md).
 window.VERSIONS = [
   {
+    version: "2.4.0",
+    date: "2026-11-07",
+    size: "131 MB",
+    file: "VideoToolkit-Setup-2.4.0.exe",
+    notes: [
+      "Tải video từ kênh YouTube: Shorts, video thường hoặc cả hai, lọc theo ngày đăng, tải về MP4 H.264.",
+      "Tải video Facebook Page nhanh hơn nhiều: chỉ quét đến khi qua ngày bắt đầu cần tải (bật \"Quét hết danh sách\" nếu cần quét cả Page).",
+      "Thống kê TikTok: người theo dõi, tổng lượt thích, lượt xem, thích, bình luận, chia sẻ từng video (API chính thức của TikTok).",
+      "Tài khoản: nhãn trạng thái xanh lá khi đã đăng nhập, kèm tài khoản / Trang / kênh đang dùng; nút Huỷ đăng nhập khi trang đăng nhập bị lỗi.",
+      "App tự báo khi có bản mới (Cài đặt → Giới thiệu → Kiểm tra bản mới).",
+      "Giao diện mượt hơn: bảng Thống kê, Lịch đã đặt hiện tức thì với hàng nghìn video; app mở nhanh hơn.",
+      "Tab Đã lên lịch trong Thống kê chỉ lấy từ API của Facebook, YouTube.",
+    ],
+  },
+  {
     version: "2.3.0",
     date: "2026-11-06",
     size: "131 MB",

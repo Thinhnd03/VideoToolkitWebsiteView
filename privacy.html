@@ -7,7 +7,7 @@
   <meta name="description" content="Chính sách quyền riêng tư của VideoToolkit: dữ liệu chỉ lưu trên máy người dùng.">
   <link rel="icon" href="logo.png">
   <script>try{var t=localStorage.getItem("vt-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
   <header class="topbar">
@@ -31,7 +31,7 @@
   <main class="section">
     <div class="wrap legal">
       <h1>Chính sách quyền riêng tư</h1>
-      <p class="muted">Áp dụng cho ứng dụng VideoToolkit · Cập nhật ngày 04/11/2026</p>
+      <p class="muted">Áp dụng cho ứng dụng VideoToolkit · Cập nhật ngày 06/11/2026</p>
 
       <p>VideoToolkit là ứng dụng Windows chạy hoàn toàn trên máy của bạn. Người phát triển (Thinhnd) <b>không có máy chủ</b>
         nhận dữ liệu từ ứng dụng và <b>không thu thập</b> bất kỳ thông tin cá nhân nào của bạn.</p>
@@ -48,7 +48,9 @@
         <li><b>YouTube:</b> mã truy cập Google chỉ dùng để tải lên và hẹn giờ video trên kênh của bạn, và đọc số liệu kênh
           (YouTube Data API, YouTube Analytics API) để hiện trong trang Thống kê của ứng dụng.</li>
         <li><b>TikTok:</b> ứng dụng dùng phiên đăng nhập trong cửa sổ trình duyệt riêng của nó để hẹn giờ video trên TikTok Studio.
-          Ứng dụng không đọc và không lưu mật khẩu của bạn.</li>
+          Ứng dụng không đọc và không lưu mật khẩu của bạn. Nếu bạn kết nối thống kê TikTok (Login Kit, Display API), ứng dụng
+          nhận mã truy cập với các quyền <code>user.info.basic</code>, <code>user.info.profile</code>, <code>user.info.stats</code>,
+          <code>video.list</code>, chỉ dùng để hiện thông tin tài khoản và số liệu video công khai của bạn trong trang Thống kê.</li>
         <li><b>Video, caption, lịch đăng:</b> chỉ đọc từ các thư mục bạn chọn và chỉ gửi tới nền tảng bạn chọn đăng.</li>
       </ul>
 
@@ -65,7 +67,8 @@
         <li>Trong ứng dụng: trang <b>Tài khoản</b> → <b>Đăng xuất</b> từng nền tảng.</li>
         <li>Xoá thư mục <code>%LOCALAPPDATA%\VideoToolkit</code>, hoặc gỡ cài đặt VideoToolkit.</li>
         <li>Thu hồi quyền ở phía nền tảng: Facebook → Cài đặt → <b>Ứng dụng và trang web</b> → gỡ ứng dụng;
-          Google → <b>Bảo mật</b> → Ứng dụng bên thứ ba → xoá quyền truy cập.</li>
+          Google → <b>Bảo mật</b> → Ứng dụng bên thứ ba → xoá quyền truy cập; TikTok → Cài đặt và quyền riêng tư →
+          <b>Bảo mật</b> → Ứng dụng và dịch vụ → xoá quyền truy cập (nút <b>Ngắt kết nối</b> trong ứng dụng cũng thu hồi quyền).</li>
       </ol>
       <p>Vì người phát triển không lưu dữ liệu nào của bạn, không có dữ liệu nào cần yêu cầu xoá ở phía người phát triển.</p>
 
@@ -79,11 +82,11 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <div class="brand small-brand"><img src="logo.png" alt="" width="28" height="28"><span>VideoToolkit</span></div>
-      <p>Phát triển bởi <b>Thinhnd</b> · <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Trang Facebook</a> · <a href="https://github.com/Thinhnd03/VideoToolkitWebsiteView">GitHub</a> · <a href="privacy">Quyền riêng tư</a></p>
+      <p>Phát triển bởi <b>Thinhnd</b> · <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Trang Facebook</a> · <a href="https://github.com/Thinhnd03/VideoToolkitWebsiteView">GitHub</a> · <a href="privacy">Quyền riêng tư</a> · <a href="terms">Điều khoản</a></p>
       <p class="muted small footer-copy">© <span id="year">2026</span> Thinhnd. Chỉ dùng cho tài khoản và nội dung của chính bạn.</p>
     </div>
   </footer>
 
-  <script src="app.js?v=12"></script>
+  <script src="app.js?v=13"></script>
 </body>
 </html>

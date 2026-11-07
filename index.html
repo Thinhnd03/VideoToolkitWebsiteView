@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VideoToolkit</title>
-  <meta name="description" content="VideoToolkit: tải video Facebook Page, làm mờ logo và lên lịch đăng TikTok, YouTube, Facebook, Instagram trên Windows.">
+  <meta name="description" content="VideoToolkit: tải video Facebook Page và kênh YouTube, làm mờ logo, lên lịch đăng TikTok, YouTube, Facebook, Instagram và xem thống kê trên Windows.">
   <link rel="icon" href="logo.png">
   <script>try{var t=localStorage.getItem("vt-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <link rel="stylesheet" href="style.css?v=12">
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
   <header class="topbar">
@@ -33,8 +33,8 @@
       <div class="wrap hero-inner">
         <div>
           <h1>Tải, làm mờ logo và lên lịch đăng video trong một app</h1>
-          <p class="lead">VideoToolkit là app Windows giúp bạn tải hàng loạt video từ một Facebook Page, che logo cũ
-            trong cả thư mục, rồi hẹn giờ đăng lên TikTok, YouTube Shorts, Trang Facebook và Instagram Reels của chính bạn.</p>
+          <p class="lead">VideoToolkit là app Windows giúp bạn tải hàng loạt video từ một Facebook Page hoặc kênh YouTube, che logo cũ
+            trong cả thư mục, rồi hẹn giờ đăng lên TikTok, YouTube Shorts, Trang Facebook và Instagram Reels của chính bạn, và xem thống kê.</p>
           <div class="hero-actions" id="tai-ve">
             <a class="btn" id="download-btn" href="#phien-ban">Tải bản cài</a>
             <a class="btn btn-ghost" href="#bang-gia">Xem bảng giá</a>
@@ -54,8 +54,8 @@
         <div class="features">
           <article class="feature">
             <div class="feature-icon">⬇</div>
-            <h3>Tải video Facebook Page</h3>
-            <p>Tải hàng loạt video và Reels của một Trang, lọc theo ngày đăng, dừng rồi chạy tiếp được.</p>
+            <h3>Tải video Facebook Page, YouTube</h3>
+            <p>Tải hàng loạt video và Reels của một Trang, hoặc Shorts / video của một kênh YouTube, lọc theo ngày đăng. Chỉ quét đến khi hết khoảng ngày cần tải, dừng rồi chạy tiếp được.</p>
           </article>
           <article class="feature">
             <div class="feature-icon">▦</div>
@@ -84,14 +84,14 @@
           </article>
           <article class="feature">
             <div class="feature-icon">▤</div>
-            <h3>Thống kê Facebook, Instagram, YouTube</h3>
+            <h3>Thống kê Facebook, Instagram, YouTube, TikTok</h3>
             <p>Lượt xem, thời gian xem, tương tác từng video; tổng quan tài khoản / kênh và khán giả; danh sách đã đăng và đã lên lịch.</p>
           </article>
         </div>
         <div class="platforms">
           <span class="platforms-label">Nền tảng hỗ trợ:</span>
-          <span class="chip"><b>TikTok</b> lên lịch đăng</span>
-          <span class="chip"><b>YouTube Shorts</b> lên lịch đăng, thống kê</span>
+          <span class="chip"><b>TikTok</b> lên lịch đăng, thống kê</span>
+          <span class="chip"><b>YouTube</b> tải video, lên lịch Shorts, thống kê</span>
           <span class="chip"><b>Trang Facebook</b> lên lịch Reels / video, thống kê</span>
           <span class="chip"><b>Instagram</b> lên lịch Reels, thống kê</span>
           <span class="chip"><b>Facebook Page</b> tải video, Reels</span>
@@ -101,7 +101,7 @@
           <div><b>Giao diện Windows 11</b><span>Sáng / tối theo Windows</span></div>
           <div><b>Dữ liệu ở máy bạn</b><span>Token mã hoá bằng Windows DPAPI</span></div>
           <div><b>Không đăng trùng</b><span>Video đã lên lịch được ghi nhớ và chuyển thư mục</span></div>
-          <div><b>Cập nhật miễn phí</b><span>Mọi bản mới trong thời hạn sử dụng</span></div>
+          <div><b>Cập nhật miễn phí</b><span>App tự báo khi có bản mới</span></div>
         </div>
       </div>
     </section>
@@ -114,8 +114,8 @@
         <div class="features">
           <article class="feature soon">
             <span class="soon-badge">Dự kiến</span>
-            <h3>Tải video từ TikTok và YouTube</h3>
-            <p>Tải hàng loạt video của một kênh TikTok hoặc YouTube, lọc theo ngày đăng, như với Facebook Page.</p>
+            <h3>Gợi ý giờ đăng tốt nhất</h3>
+            <p>Dựa trên thống kê lượt xem theo giờ đăng của chính bạn để gợi ý khung giờ, áp thẳng vào trang Lên lịch.</p>
           </article>
           <article class="feature soon">
             <span class="soon-badge">Dự kiến</span>
@@ -229,6 +229,7 @@
             <a href="#hd-len-lich">Lên lịch đăng</a>
             <a href="#hd-lich-da-dat">Lịch đã đặt</a>
             <a href="#hd-thong-ke">Thống kê</a>
+            <a href="#hd-ban-moi">Bản mới</a>
             <a href="#hd-loi">Gặp lỗi thường gặp</a>
           </nav>
         </aside>
@@ -254,7 +255,8 @@
           <article id="hd-tai-khoan">
             <h3>Tài khoản (một lần)</h3>
             <ul>
-              <li><b>TikTok</b>: trang Tài khoản → <b>Đăng nhập TikTok...</b>. Một cửa sổ trình duyệt riêng mở ra, bạn tự đăng nhập rồi đóng cửa sổ. Lần sau tool tự nhớ.</li>
+              <li><b>TikTok</b>: trang Tài khoản → <b>Đăng nhập TikTok...</b>. Một cửa sổ trình duyệt riêng mở ra, bạn tự đăng nhập rồi đóng cửa sổ. Lần sau tool tự nhớ.
+                Thống kê TikTok kết nối riêng: <b>Kết nối thống kê TikTok...</b> → đăng nhập đúng tài khoản trong trình duyệt → <b>Cho phép</b>.</li>
               <li><b>YouTube</b>: tạo OAuth client loại "Desktop app" trong Google Cloud (bật <b>YouTube Data API v3</b> và <b>YouTube Analytics API</b> cho trang Thống kê), chọn file <code>client_secret.json</code> rồi bấm <b>Đăng nhập Google...</b>.</li>
               <li><b>Facebook (Trang)</b>: trên Meta for Developers:
                 <ol>
@@ -281,16 +283,19 @@
                 </ol>
               </li>
             </ul>
+            <p class="note">Mỗi khung có nhãn trạng thái: <b>xanh lá</b> là đã đăng nhập (kèm tài khoản, Trang, kênh đang dùng), <b>cam</b> là thiếu quyền,
+              <b>xám</b> là chưa đăng nhập. Trong lúc chờ đăng nhập trong trình duyệt, nút <b>Huỷ đăng nhập</b> hiện ra để dừng ngay khi trang đăng nhập báo lỗi.</p>
           </article>
           <article id="hd-tai-video">
             <h3>Tải video</h3>
             <ol>
-              <li>Dán địa chỉ Page, ví dụ <code>https://www.facebook.com/TenPage</code>.</li>
-              <li>Chọn ngày đăng: trong khoảng, trước ngày, sau ngày hoặc toàn bộ video.</li>
+              <li>Dán link Facebook Page (<code>https://www.facebook.com/TenPage</code>) hoặc kênh YouTube (<code>https://www.youtube.com/@TenKenh</code>; chọn Shorts, video thường hoặc cả hai).</li>
+              <li>Chọn ngày đăng: trong khoảng, trước ngày, sau ngày hoặc toàn bộ video. Với "trong khoảng" / "sau ngày", app chỉ quét đến khi qua ngày bắt đầu nên nhanh hơn nhiều với Page, kênh lớn.</li>
               <li>Chọn thư mục lưu. Lần đầu nên bật <b>Chỉ xem trước</b> để xem số video.</li>
-              <li>Nên bấm <b>Đăng nhập Facebook...</b> một lần: không đăng nhập thì Facebook chỉ cho xem một phần danh sách.</li>
+              <li>Facebook: nên bấm <b>Đăng nhập Facebook...</b> một lần, không đăng nhập thì Facebook chỉ cho xem một phần danh sách. YouTube không cần đăng nhập.</li>
               <li><b>Bắt đầu</b>. Xong bấm <b>Làm mờ thư mục này</b>.</li>
             </ol>
+            <p class="note">Thấy thiếu video cũ: bật <b>Quét hết danh sách</b> để cuộn tới cuối Page (chậm hơn).</p>
           </article>
           <article id="hd-lam-mo">
             <h3>Làm mờ logo</h3>
@@ -319,16 +324,22 @@
           </article>
           <article id="hd-thong-ke">
             <h3>Thống kê</h3>
-            <p>Trang <b>Thống kê</b> có 3 nguồn <b>Facebook</b>, <b>Instagram</b>, <b>YouTube</b> (nút chọn ở trên cùng), đọc lại dữ liệu mới mỗi lần mở:</p>
+            <p>Trang <b>Thống kê</b> có 4 nguồn <b>Facebook</b>, <b>Instagram</b>, <b>YouTube</b>, <b>TikTok</b> (nút chọn ở trên cùng), đọc lại dữ liệu mới mỗi lần mở:</p>
             <ul>
               <li>Tổng quan: người theo dõi, lượt thích Trang, số video đã đăng / đã lên lịch, tổng lượt xem, cảm xúc, bình luận, chia sẻ.</li>
               <li>Tab <b>Đã đăng</b>: từng video với lượt xem, tiếp cận, cảm xúc, bình luận, chia sẻ, thời gian xem trung bình; lọc theo loại (Reels / video), thời gian, tìm theo tiêu đề.</li>
-              <li>Tab <b>Đã lên lịch</b>: bài hẹn giờ trên Facebook và video VideoToolkit đã lên lịch.</li>
+              <li>Tab <b>Đã lên lịch</b> (Facebook, YouTube): bài hẹn giờ mà nền tảng trả về qua API.</li>
               <li>Chọn một video để xem chi tiết: mọi chỉ số Facebook Insights trả về, mô tả, bình luận mới nhất.</li>
               <li><b>Instagram</b>: lượt xem, tiếp cận, thích, bình luận, chia sẻ, lưu, thời gian xem Reels từng bài; tổng quan tài khoản 28 ngày, khán giả theo độ tuổi, giới tính, nơi ở (từ 100 người theo dõi).</li>
               <li><b>YouTube</b>: lượt xem, giờ xem, thời lượng xem trung bình, người đăng ký mới từng video; tổng quan kênh 28 ngày với nguồn lượt xem, thiết bị, quốc gia, độ tuổi, giới tính.</li>
+              <li><b>TikTok</b>: người theo dõi, tổng lượt thích, số video; lượt xem, thích, bình luận, chia sẻ, thời lượng từng video công khai (API chính thức của TikTok).</li>
             </ul>
             <p class="note">Cần quyền <code>read_insights</code> và <code>pages_read_user_content</code> (xem mục Tài khoản). Facebook tổng hợp lượt xem chậm vài giờ. YouTube cần bật YouTube Analytics API và đăng nhập Google lại một lần; số liệu Analytics chậm 1–2 ngày.</p>
+          </article>
+          <article id="hd-ban-moi">
+            <h3>Bản mới</h3>
+            <p>App tự xem trang web lúc mở và vài giờ một lần; có bản mới thì hiện thông báo <b>Có bản mới VideoToolkit</b> → <b>Xem và tải về</b>.
+              Chạy file cài đặt để cài đè: mã kích hoạt, đăng nhập và cài đặt giữ nguyên. Kiểm tra bất cứ lúc nào ở <b>Cài đặt → Giới thiệu → Kiểm tra bản mới</b>.</p>
           </article>
           <article id="hd-loi">
             <h3>Gặp lỗi thường gặp</h3>
@@ -340,6 +351,7 @@
               <li><b>Bài đăng lên Trang Facebook chỉ admin thấy</b>: app Meta còn ở chế độ Development; chuyển sang <b>Live</b> (xem mục Tài khoản) rồi đặt lịch lại các bài đó.</li>
               <li><b>Đăng nhập Facebook báo "Không thể tải URL"</b>: thêm <code>https://thinhnd.id.vn/fb-login</code> vào URI chuyển hướng OAuth hợp lệ và <code>thinhnd.id.vn</code> vào Miền ứng dụng (xem mục Tài khoản). Cần VideoToolkit 2.0.1 trở lên.</li>
               <li><b>YouTube bắt đăng nhập lại sau 7 ngày</b>: chuyển app Google Cloud sang "In production".</li>
+              <li><b>Đăng nhập bị kẹt hoặc trang đăng nhập báo lỗi</b>: bấm <b>Huỷ đăng nhập</b> ở trang Tài khoản, sửa lỗi rồi đăng nhập lại.</li>
               <li><b>Đăng nhập Facebook thiếu Trang</b>: Trang nằm trong Meta Business Suite cần quyền <code>business_management</code> (thêm vào app Meta nếu chưa có); đăng nhập lại và ở bước chọn Trang chọn "tất cả các Trang".</li>
               <li><b>Kết nối Instagram báo không thấy tài khoản</b>: tài khoản phải là tài khoản chuyên nghiệp, liên kết với một Trang có trong danh sách khi đăng nhập Facebook; lúc Facebook hỏi, tick cả Trang lẫn tài khoản Instagram.</li>
               <li><b>Thống kê YouTube báo thiếu YouTube Analytics</b>: bật YouTube Analytics API trong Google Cloud (APIs &amp; Services → Library) rồi bấm <b>Đăng nhập Google...</b> lại.</li>
@@ -361,12 +373,12 @@
   <footer class="footer">
     <div class="wrap footer-inner">
       <div class="brand small-brand"><img src="logo.png" alt="" width="28" height="28"><span>VideoToolkit</span></div>
-      <p>Phát triển bởi <b>Thinhnd</b> · <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Trang Facebook</a> · <a href="https://github.com/Thinhnd03/VideoToolkitWebsiteView">GitHub</a> · <a href="privacy">Quyền riêng tư</a></p>
+      <p>Phát triển bởi <b>Thinhnd</b> · <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Trang Facebook</a> · <a href="https://github.com/Thinhnd03/VideoToolkitWebsiteView">GitHub</a> · <a href="privacy">Quyền riêng tư</a> · <a href="terms">Điều khoản</a></p>
       <p class="muted small footer-copy">© <span id="year">2026</span> Thinhnd. Chỉ dùng cho tài khoản và nội dung của chính bạn.</p>
     </div>
   </footer>
 
-  <script src="versions.js?v=12"></script>
-  <script src="app.js?v=12"></script>
+  <script src="versions.js?v=13"></script>
+  <script src="app.js?v=13"></script>
 </body>
 </html>

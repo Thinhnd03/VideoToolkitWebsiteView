@@ -3,6 +3,18 @@
 // with the tag "v<version>" (see docs/README.md).
 window.VERSIONS = [
   {
+    version: "2.5.0",
+    date: "2026-11-10",
+    size: "131 MB",
+    file: "VideoToolkit-Setup-2.5.0.exe",
+    notes: [
+      "Chỉ tải top lượt xem: trong khoảng ngày đã chọn, chỉ tải N video nhiều lượt xem nhất (Facebook Page và kênh YouTube); nhật ký hiện lượt xem từng video.",
+      "Caption lấy đủ nội dung bài viết Facebook: trang Lên lịch dùng toàn bộ nội dung bài, không còn bị cắt ở 80 ký tự như tên file.",
+      "Tuỳ chọn \"Bỏ phần sau dấu #\": tên file và caption chỉ lấy phần nội dung trước hashtag đầu tiên.",
+      "Hết cửa sổ đen nháy lên ở mỗi video khi tải.",
+    ],
+  },
+  {
     version: "2.4.0",
     date: "2026-11-07",
     size: "131 MB",

@@ -5,7 +5,7 @@
   const API = "https://www.tikwm.com";
   const $ = (id) => document.getElementById(id);
   const url = $("dl-url"), status = $("dl-status"), card = $("dl-card"), save = $("dl-save");
-  const bar = $("dl-progress"), fill = bar.querySelector("span");
+  const find_ = $("dl-find"), bar = $("dl-progress"), fill = bar.querySelector(".dl-bar span"), got_ = $("dl-got");
   let found = null; // {id, title, author, video, cover, size, duration}
   let file = null; // the downloaded File, ready for the share sheet
 
@@ -13,7 +13,12 @@
   const mb = (n) => (n ? `${(n / 1048576).toFixed(n < 10485760 ? 1 : 0)} MB` : "");
   const time = (s) => (s ? `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, "0")}` : "");
   const abs = (u) => (!u ? "" : u.startsWith("http") ? u : API + u);
+  // Phones / tablets: the share sheet ("Lưu video" -> Photos). Computers: a normal download to the Downloads folder;
+  // Chrome / Brave / Edge on Windows also have a share sheet, but it cannot save the file.
+  const ua = navigator.userAgent;
+  const phone = /iPhone|iPad|iPod|Android/i.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua));
   const canShareFiles = () => {
+    if (!phone) return false;
     try {
       return !!(navigator.canShare && navigator.canShare({ files: [new File([""], "x.mp4", { type: "video/mp4" })] }));
     } catch (e) { return false; }
@@ -37,7 +42,7 @@
       const text = await navigator.clipboard.readText();
       if (!text) return say("Bộ nhớ tạm trống: hãy sao chép link video TikTok trước.", true);
       url.value = linkOf(text);
-      find();
+      say("");
     } catch (e) {
       url.focus();
       say("Trình duyệt không cho đọc bộ nhớ tạm: chạm giữ vào ô link → Dán.", true);
@@ -55,8 +60,9 @@
     const k = kind(link);
     if (k === "facebook") return say("Web chưa tải được video Facebook. Dùng app VideoToolkit trên máy tính.", true);
     if (k !== "tiktok") return say("Đây không phải link TikTok. Mở video trong TikTok → Chia sẻ → Sao chép liên kết.", true);
-    say("Đang tìm video...");
-    $("dl-find").disabled = true;
+    say("");
+    find_.disabled = true;
+    find_.textContent = "Đang tìm video...";
     try {
       const resp = await fetch(`${API}/api/?url=${encodeURIComponent(link)}&hd=1`);
       const json = await resp.json();
@@ -73,7 +79,8 @@
     } catch (e) {
       say(`Không tìm được video: ${e.message}. Kiểm tra link (video công khai) rồi thử lại sau ít giây.`, true);
     } finally {
-      $("dl-find").disabled = false;
+      find_.disabled = false;
+      find_.textContent = "Tìm video";
     }
   }
 
@@ -91,8 +98,7 @@
       .filter(Boolean).join(" · ");
     save.textContent = "Lưu video";
     save.disabled = false;
-    bar.style.display = "none";
-    $("dl-ios").classList.add("hidden");
+    bar.classList.add("hidden");
     card.classList.remove("hidden");
     say(""); // the banner already says it
     card.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -102,20 +108,20 @@
     if (!found) return;
     if (file) return deliver(); // second tap: the share sheet needs a fresh tap after the download
     save.disabled = true;
-    bar.style.display = "block";
+    save.textContent = "Đang tải video...";
+    bar.classList.remove("hidden");
     fill.style.width = "0";
-    say("Đang tải video...");
+    got_.textContent = "";
+    say("");
     try {
       file = await download(found);
-      if (canShareFiles()) {
-        save.textContent = "Lưu vào Ảnh";
-        $("dl-ios").classList.remove("hidden");
-        say("Tải xong. Bấm Lưu vào Ảnh rồi chọn Lưu video.");
-      } else {
-        deliver();
-      }
+      bar.classList.add("hidden");
+      if (canShareFiles()) save.textContent = "Lưu vào Ảnh"; // the share sheet: "Lưu video" -> Photos
+      else { save.textContent = "Lưu video"; deliver(); }
     } catch (e) {
       file = null;
+      bar.classList.add("hidden");
+      save.textContent = "Lưu video";
       say(`Chưa tải được video (${e.message}). Hãy thử lại sau ít giây.`, true);
     } finally {
       save.disabled = false;
@@ -137,14 +143,14 @@
         parts.push(value);
         got += value.length;
         if (total) fill.style.width = `${Math.min(100, (got / total) * 100).toFixed(0)}%`;
-        say(`Đang tải video... ${mb(got)}${total ? " / " + mb(total) : ""}`);
+        got_.textContent = `${mb(got)}${total ? " / " + mb(total) : ""}`;
       }
       blob = new Blob(parts, { type: "video/mp4" });
     } else {
       blob = await resp.blob();
     }
     fill.style.width = "100%";
-    const name = `${(v.title || "tiktok").replace(/[\\/:*?"<>|#\n\r\t]+/g, " ").trim().slice(0, 60) || "tiktok"}-${v.id}.mp4`;
+    const name = `${(v.title || "tiktok").replace(/[\\/:*?"<>|#\n\r\t]+/g, " ").replace(/\s+/g, " ").trim().slice(0, 60) || "tiktok"}-${v.id}.mp4`;
     return new File([blob], name, { type: "video/mp4" });
   }
 
@@ -152,7 +158,6 @@
     if (canShareFiles()) {
       try {
         await navigator.share({ files: [file], title: found.title || "Video TikTok" });
-        say("Xong. Video nằm trong ứng dụng Ảnh (nếu bạn đã chọn Lưu video).");
       } catch (e) {
         if (e && e.name !== "AbortError") say(`Không mở được bảng chia sẻ: ${e.message}`, true);
       }
@@ -164,10 +169,9 @@
     document.body.appendChild(a);
     a.click();
     setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 60000);
-    say(`Đã lưu ${file.name} vào thư mục Tải về.`);
   }
 
-  // a link in the address (…/download?url=...) or shared to the page
+  // a link in the address (…/download?url=...): filled in, found with "Tìm video" like a pasted one
   const preset = new URLSearchParams(location.search).get("url");
-  if (preset) { url.value = linkOf(preset); find(); }
+  if (preset) url.value = linkOf(preset);
 })();

@@ -7,7 +7,7 @@
   <meta name="description" content="Tải video TikTok chất lượng gốc, không logo, lưu thẳng vào Ảnh trên iPhone.">
   <link rel="icon" href="logo.png">
   <script>try{var t=localStorage.getItem("vt-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=15">
   <style>
     .dl { max-width: 640px; }
     .dl h1 { font-size: 1.7rem; margin: 0 0 6px; }
@@ -39,10 +39,10 @@
     .dl-body { padding: 14px 16px 16px; }
     .dl-title { margin: 0 0 4px; font-size: 1.02rem; font-weight: 600; overflow-wrap: anywhere; }
     .dl-meta { margin: 0 0 12px; }
-    .dl-progress { height: 6px; background: var(--line); border-radius: 999px; overflow: hidden; margin: 12px 0 0; display: none; }
-    .dl-progress span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
-    .dl-steps { margin: 12px 0 0; padding-left: 1.2em; }
-    .dl-steps li { margin: 2px 0; }
+    .dl-progress { display: flex; align-items: center; gap: 10px; margin: 10px 0 0; }
+    .dl-bar { flex: 1; height: 6px; background: var(--line); border-radius: 999px; overflow: hidden; }
+    .dl-bar span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+    .dl-got { white-space: nowrap; font-variant-numeric: tabular-nums; }
     .hidden { display: none !important; }
   </style>
 </head>
@@ -68,7 +68,7 @@
   <main class="section">
     <div class="wrap dl">
       <h1>Tải video TikTok</h1>
-      <p class="dl-lead muted">Dán link video TikTok: tải bản gốc chất lượng cao nhất, không logo TikTok. Trên iPhone, video lưu thẳng vào <b>Ảnh</b>.</p>
+      <p class="dl-lead muted">Dán link video TikTok: tải bản gốc chất lượng cao nhất, không logo TikTok.</p>
 
       <form class="dl-form" id="dl-form" autocomplete="off">
         <div class="dl-input">
@@ -93,11 +93,10 @@
           <div class="dl-actions">
             <button class="btn" type="button" id="dl-save">Lưu video</button>
           </div>
-          <div class="dl-progress" id="dl-progress"><span></span></div>
-          <ol class="dl-steps muted small hidden" id="dl-ios">
-            <li>Bấm <b>Lưu vào Ảnh</b>, bảng chia sẻ của iPhone hiện ra.</li>
-            <li>Chọn <b>Lưu video</b>: video vào ứng dụng Ảnh.</li>
-          </ol>
+          <div class="dl-progress hidden" id="dl-progress">
+            <div class="dl-bar"><span></span></div>
+            <span class="dl-got muted small" id="dl-got"></span>
+          </div>
         </div>
       </section>
 
@@ -114,7 +113,7 @@
     </div>
   </footer>
 
-  <script src="app.js?v=13"></script>
-  <script src="download.js?v=1"></script>
+  <script src="app.js?v=14"></script>
+  <script src="download.js?v=4"></script>
 </body>
 </html>

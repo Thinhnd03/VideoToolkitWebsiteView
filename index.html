@@ -7,7 +7,7 @@
   <meta name="description" content="VideoToolkit: tải video Facebook Page và kênh YouTube, làm mờ logo, lên lịch đăng TikTok, YouTube, Facebook, Instagram và xem thống kê trên Windows.">
   <link rel="icon" href="logo.png">
   <script>try{var t=localStorage.getItem("vt-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
   <header class="topbar">
@@ -149,10 +149,12 @@
         <h2>Bảng giá</h2>
         <p class="muted">Đủ mọi tính năng ở cả hai gói, chỉ khác thời hạn. Mỗi mã kích hoạt dùng cho một máy tính.</p>
         <div class="plans">
-          <article class="plan">
+          <article class="plan plan-sale">
+            <span class="badge badge-sale">Giảm 100.000đ</span>
             <h3>6 tháng</h3>
-            <div class="price">299.000<span>đ</span></div>
-            <p class="muted small">≈ 49.800đ / tháng</p>
+            <div class="price-old">299.000đ</div>
+            <div class="price">199.000<span>đ</span></div>
+            <p class="muted small">Giá khuyến mãi · ≈ 33.200đ / tháng</p>
             <ul>
               <li>Đủ mọi tính năng</li>
               <li>Cập nhật bản mới miễn phí</li>
@@ -161,16 +163,16 @@
             <a class="btn btn-ghost" href="#cach-mua">Mua gói 6 tháng</a>
           </article>
           <article class="plan plan-best">
-            <span class="badge">Tiết kiệm 99.000đ</span>
-            <h3>1 năm</h3>
+            <span class="badge">Mua một lần</span>
+            <h3>Trọn đời</h3>
             <div class="price">499.000<span>đ</span></div>
-            <p class="muted small">≈ 41.600đ / tháng</p>
+            <p class="muted small">Không gia hạn, dùng mãi trên máy đó</p>
             <ul>
               <li>Đủ mọi tính năng</li>
-              <li>Cập nhật bản mới miễn phí</li>
+              <li>Cập nhật bản mới miễn phí, không giới hạn thời gian</li>
               <li>Hỗ trợ qua Trang Facebook</li>
             </ul>
-            <a class="btn" href="#cach-mua">Mua gói 1 năm</a>
+            <a class="btn" href="#cach-mua">Mua gói trọn đời</a>
           </article>
         </div>
       </div>
@@ -213,7 +215,7 @@
         <ol class="buy-steps">
           <li><b>Tải và cài app</b> (nút <a href="#tai-ve">Tải bản cài</a> ở đầu trang).</li>
           <li><b>Mở app</b>: hộp Kích hoạt hiện ra với <b>mã máy</b> (dạng <code>XXXX-XXXX-XXXX-XXXX</code>), bấm nút sao chép.</li>
-          <li><b>Nhắn tin cho <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Trang Facebook VideoToolkit</a></b>: gửi mã máy và gói muốn mua (6 tháng / 1 năm), chuyển khoản theo hướng dẫn.</li>
+          <li><b>Nhắn tin cho <a href="https://www.facebook.com/profile.php?id=61595970523754" target="_blank" rel="noopener">Trang Facebook VideoToolkit</a></b>: gửi mã máy và gói muốn mua (6 tháng / trọn đời), chuyển khoản theo hướng dẫn.</li>
           <li><b>Nhận mã kích hoạt</b>, dán vào hộp Kích hoạt → <b>Kích hoạt</b>. Xong.</li>
         </ol>
         <p class="note">Thời gian còn lại xem ở <b>Cài đặt → Bản quyền</b>; app nhắc khi còn 7 ngày. Gia hạn hoặc đổi máy: nhắn Trang Facebook để nhận mã mới,
@@ -384,7 +386,7 @@
     </div>
   </footer>
 
-  <script src="versions.js?v=13"></script>
-  <script src="app.js?v=13"></script>
+  <script src="versions.js?v=14"></script>
+  <script src="app.js?v=14"></script>
 </body>
 </html>

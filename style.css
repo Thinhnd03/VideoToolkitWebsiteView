@@ -147,6 +147,10 @@ h1, h2, h3 { line-height: 1.25; }
 .plan-best .badge { position: absolute; top: -12px; right: 18px; background: var(--accent); color: var(--accent-text); }
 .plan h3 { margin: 0; font-size: 1.2rem; }
 .price { font-size: 2.3rem; font-weight: 700; margin: 6px 0 0; }
+/* a plan on sale: the usual price struck through above the sale price */
+.price-old { color: var(--muted); text-decoration: line-through; font-size: 1.05rem; margin: 6px 0 -6px; }
+.plan-sale { position: relative; }
+.plan-sale .badge-sale { position: absolute; top: -12px; right: 18px; background: #dc2626; color: #fff; }
 .price span { font-size: 1.2rem; margin-left: 2px; }
 .plan p { margin: 0 0 12px; }
 .plan ul { margin: 0 0 20px; padding-left: 20px; flex: 1; }
